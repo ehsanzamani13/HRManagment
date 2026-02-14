@@ -2,10 +2,10 @@
 
 namespace HR_Managment.Application.DTOs.LeaveType.Validators;
 
-public class CreateLeaveTypeDtoValidator
-    : AbstractValidator<CreateLeaveTypeDto>
+public class ILeaveTypeDtoValidator
+    : AbstractValidator<ILeaveTypevalidator>
 {
-    public CreateLeaveTypeDtoValidator()
+    public ILeaveTypeDtoValidator()
     {
         RuleFor(p => p.Name).NotEmpty().WithMessage("{Properties} is requierd.")
             .NotNull()

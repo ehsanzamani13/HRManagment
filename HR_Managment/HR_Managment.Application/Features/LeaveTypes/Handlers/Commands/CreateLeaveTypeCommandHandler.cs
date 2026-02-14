@@ -21,7 +21,7 @@ public class CreateLeaveTypeCommandHandler
     public async Task<int> Handle(CreateLeaveTypeCommand request, CancellationToken cancellationToken)
     {
         #region Validations
-        var validatior = new CreateLeaveTypeDtoValidator();
+        var validatior = new CreateLeaveTypeValidator(_leaveTypeRepository);
         var validatiorResult = await validatior.ValidateAsync(request.LeaveTypeDto);
         if (validatiorResult.IsValid)
         {

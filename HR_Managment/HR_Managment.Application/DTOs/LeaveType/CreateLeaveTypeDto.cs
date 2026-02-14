@@ -2,7 +2,7 @@
 
 namespace HR_Managment.Application.DTOs.LeaveType;
 
-public class CreateLeaveTypeDto : BaseDto
+public class CreateLeaveTypeDto : BaseDto, ILeaveTypevalidator
 {
     public string Name { get; set; }
     public int DefaultDay { get; set; }
