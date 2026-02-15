@@ -1,5 +1,7 @@
-﻿using HR_Managment.Application.Features.LeaveAllocations.Requests.Commands;
+﻿using HR_Managment.Application.Exceptions;
+using HR_Managment.Application.Features.LeaveAllocations.Requests.Commands;
 using HR_Managment.Application.Persistence.Contracts;
+using HR_Managment.Domain;
 using MapsterMapper;
 using MediatR;
 
@@ -18,6 +20,10 @@ public class DeleteLeaveAllocationCommandHandler :
     }
     public async Task<Unit> Handle(DeleteLeaveAllocationCommand request, CancellationToken cancellationToken)
     {
+        var leaveAllocation = await _leaveAllocationRepository.Get(request.Id);
+        if (leaveAllocation == null)
+            throw new NotFoundException(nameof(LeaveAllocation), request.Id);
+
         await _leaveAllocationRepository.Delete(request.Id);
         return Unit.Value;
     }
