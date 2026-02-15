@@ -9,7 +9,7 @@ public class ILeaveTypeDtoValidator
     {
         RuleFor(p => p.Name).NotEmpty().WithMessage("{Properties} is requierd.")
             .NotNull()
-            .MaximumLength(50).WithMessage("{Properties} must less than {value}");
+            .MaximumLength(50).WithMessage("{Properties} must less than {ComparationValue} Char");
 
         RuleFor(p => p.DefaultDay)
             .NotEmpty().WithMessage("{Properties} is requierd.")

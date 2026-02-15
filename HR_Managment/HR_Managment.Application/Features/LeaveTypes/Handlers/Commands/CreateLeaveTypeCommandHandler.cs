@@ -23,7 +23,7 @@ public class CreateLeaveTypeCommandHandler
         #region Validations
         var validatior = new CreateLeaveTypeValidator(_leaveTypeRepository);
         var validatiorResult = await validatior.ValidateAsync(request.LeaveTypeDto);
-        if (validatiorResult.IsValid)
+        if (!validatiorResult.IsValid)
         {
             throw new Exception();
         }
