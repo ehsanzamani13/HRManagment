@@ -1,6 +1,6 @@
 ﻿namespace HR_Managment.Application.Persistence.Contracts;
 
-public interface IGenericeRepository<T> where T : class
+public interface IGenericRepository<T> where T : class
 {
     Task<T> Get(int id);
     Task<IReadOnlyList<T>> GetAll();

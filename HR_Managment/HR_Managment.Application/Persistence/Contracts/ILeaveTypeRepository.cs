@@ -2,7 +2,7 @@
 
 namespace HR_Managment.Application.Persistence.Contracts;
 
-public interface ILeaveTypeRepository : IGenericeRepository<LeaveTypeDto>
+public interface ILeaveTypeRepository : IGenericRepository<LeaveTypeDto>
 {
     Task<List<LeaveTypeDto>> GetLeaveTypesWithDetails();
     Task<LeaveTypeDto> GetLeaveTypeWithDetails(int id);
