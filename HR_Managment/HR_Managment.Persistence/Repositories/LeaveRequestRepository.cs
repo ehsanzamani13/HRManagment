@@ -1,6 +1,6 @@
-﻿using HR_Managment.Application.DTOs.LeaveRequest;
+﻿using HR_Managment.Application.Contracts.Persistence;
+using HR_Managment.Application.DTOs.LeaveRequest;
 using HR_Managment.Application.DTOs.LeaveType;
-using HR_Managment.Application.Persistence.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace HR_Managment.Persistence.Repositories;

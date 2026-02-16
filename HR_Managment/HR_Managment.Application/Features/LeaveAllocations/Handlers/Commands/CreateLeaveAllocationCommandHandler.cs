@@ -1,8 +1,8 @@
-﻿using HR_Managment.Application.DTOs.LeaveAllocation;
+﻿using HR_Managment.Application.Contracts.Persistence;
+using HR_Managment.Application.DTOs.LeaveAllocation;
 using HR_Managment.Application.DTOs.LeaveAllocation.Validators;
 using HR_Managment.Application.Exceptions;
 using HR_Managment.Application.Features.LeaveAllocations.Requests.Commands;
-using HR_Managment.Application.Persistence.Contracts;
 using HR_Managment.Application.Responses;
 using MapsterMapper;
 using MediatR;

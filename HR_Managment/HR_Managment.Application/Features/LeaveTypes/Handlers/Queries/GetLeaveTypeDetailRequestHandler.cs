@@ -1,6 +1,6 @@
-﻿using HR_Managment.Application.DTOs.LeaveType;
+﻿using HR_Managment.Application.Contracts.Persistence;
+using HR_Managment.Application.DTOs.LeaveType;
 using HR_Managment.Application.Features.LeaveTypes.Requests.Queries;
-using HR_Managment.Application.Persistence.Contracts;
 using MapsterMapper;
 using MediatR;
 
