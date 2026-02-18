@@ -11,6 +11,6 @@ public static class ApplicationServicesRegistration
         // Register Mapster configuration and services manually
         var config = TypeAdapterConfig.GlobalSettings;
         services.AddSingleton(config);
-        services.AddScoped<IMapper>();
+        //services.AddScoped<IMapper>();
     }
 }
