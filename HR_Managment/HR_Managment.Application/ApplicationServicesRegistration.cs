@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Mapster;
+﻿using Mapster;
 using MapsterMapper;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace HR_Managment.Application;
 
@@ -11,6 +12,14 @@ public static class ApplicationServicesRegistration
         // Register Mapster configuration and services manually
         var config = TypeAdapterConfig.GlobalSettings;
         services.AddSingleton(config);
-        //services.AddScoped<IMapper>();
+
+        // Register Mapster IMapper implementation
+        services.AddScoped<IMapper, ServiceMapper>();
+
+        // Register MediatR using the configuration overload.
+        // This matches the expected signature and registers handlers from the executing assembly.
+        services.AddMediatR(cfg =>
+            cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()
+        ));
     }
 }
