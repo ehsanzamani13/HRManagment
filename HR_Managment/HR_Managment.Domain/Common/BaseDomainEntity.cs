@@ -3,8 +3,8 @@
 public class BaseDomainEntity
 {
     public int Id { get; set; }
-    public DateTime CreateDate { get; set; }
-    public string CreatedBy { get; set; }
+    public DateTime CreateDate { get; set; } = new DateTime();
+    public string CreatedBy { get; set; } = null!;
     public DateTime? LastModifiedDate { get; set; }
-    public string LastModifiedBy { get; set; }
+    public string? LastModifiedBy { get; set; }
 }
